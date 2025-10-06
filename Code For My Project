@@ -1,0 +1,142 @@
+: Adding a “Wishlist” button to products.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Additional Features - Wishlist</title>
+    <style>
+        .product { margin: 20px; padding: 20px; border: 1px solid #ccc; width: 200px; }
+        button { padding: 10px; background-color: #28a745; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+    <h2>Product with Wishlist Feature</h2>
+    <div class="product">
+        <h3>Smartphone</h3>
+        <p>Price: $499</p>
+        <button onclick="addToWishlist()">Add to Wishlist</button>
+    </div>
+
+    <script>
+        function addToWishlist() {
+            alert("Item added to wishlist!");
+        }
+    </script>
+</body>
+</html>
+
+
+
+: Hover effects and improved product card layout.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UI/UX Improvements</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; justify-content: center; margin-top: 50px; }
+        .product-card {
+            border: 1px solid #ccc; border-radius: 10px; padding: 20px; width: 200px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product-card:hover { transform: scale(1.05); box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    </style>
+</head>
+<body>
+    <div class="product-card">
+        <h3>Headphones</h3>
+        <p>Price: $99</p>
+        <p>High-quality sound with noise cancellation.</p>
+    </div>
+</body>
+</html>
+
+
+
+Fetch product data from a sample API (using fetch).
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Enhancements</title>
+</head>
+<body>
+    <h2>Products from API</h2>
+    <ul id="product-list"></ul>
+
+    <script>
+        // Example API (dummy)
+        const products = [
+            {name: "Laptop", price: "$899"},
+            {name: "Smartwatch", price: "$199"},
+            {name: "Tablet", price: "$299"}
+        ];
+
+        const ul = document.getElementById("product-list");
+        products.forEach(product => {
+            const li = document.createElement("li");
+            li.textContent = `${product.name} - ${product.price}`;
+            ul.appendChild(li);
+        });
+    </script>
+</body>
+</html>
+
+
+: Lazy loading images for performance improvement.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Performance & Security</title>
+</head>
+<body>
+    <h2>Product Images (Lazy Load)</h2>
+    <img src="https://via.placeholder.com/200" loading="lazy" alt="Product 1">
+    <img src="https://via.placeholder.com/200" loading="lazy" alt="Product 2">
+</body>
+</html>
+
+
+
+Simple input validation for product quantity.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testing Enhancements</title>
+</head>
+<body>
+    <h2>Buy Product</h2>
+    <label for="qty">Quantity:</label>
+    <input type="number" id="qty" min="1" max="10">
+    <button onclick="validateQty()">Add to Cart</button>
+
+    <script>
+        function validateQty() {
+            const qty = document.getElementById("qty").value;
+            if(qty < 1 || qty > 10) {
+                alert("Quantity must be between 1 and 10");
+            } else {
+                alert("Added " + qty + " items to cart!");
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+Static deployment-ready HTML page.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deployment Ready Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        a { padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; }
+        a:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <h2>Welcome to Our E-Commerce Site</h2>
+    <p>Click below to visit our latest products.</p>
+    <a href="#">Explore Products</a>
+</body>
+</html>
